@@ -6,7 +6,7 @@ User management system
 
 ## Inclused
 
-This system inclused
+This system includes
 
 - Roles
 - Roles middleware
