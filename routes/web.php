@@ -27,3 +27,7 @@ Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth', 'can:manage-users')->group(function (){
     Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
 });
+
+Route::namespace('News')->prefix('news')->name('news.')->middleware('auth')->group(function (){
+    Route::resource('/news', 'NewsController', ['except' => ['store']]);
+});

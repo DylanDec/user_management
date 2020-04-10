@@ -139,8 +139,17 @@
             General
         </p>
         <ul class="menu-list">
-            <li><a class="is-active">Dashboard</a></li>
+            <li><a class="@if(Route::is('home')) is-active @endif" href="{{ route('home') }}">Home</a></li>
         </ul>
+
+        @can('manage-users')
+        <p class="menu-label">
+            System
+        </p>
+        <ul class="menu-list">
+            <li><a class="@if(Route::is('admin.users.index') OR Route::is('admin.users.edit')) is-active @endif" href="{{ route('admin.users.index') }}">Dashboard</a></li>
+        </ul>
+        @endcan
     </nav>
 </aside>
 
