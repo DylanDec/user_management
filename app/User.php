@@ -61,8 +61,15 @@ class User extends Authenticatable
 
     /* Get highest role */
 
-    public function highestRole()
+    public function highestRole($type)
     {
-            return $this->roles()->orderBy('role_id')->pluck('name')->first();
+        if($type === 'short'){
+            return $this->roles()->orderBy('role_id')->pluck('short')->first();
+        }
+
+        if($type === 'long'){
+            return $this->roles()->orderBy('role_id')->pluck('long')->first();
+        }
+
     }
 }

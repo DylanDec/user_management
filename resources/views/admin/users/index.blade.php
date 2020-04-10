@@ -21,7 +21,7 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at }}</td>
-                <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
+                <td>{{ implode(', ', $user->roles()->get()->pluck('long')->toArray()) }}</td>
                 <td>
 
                     @can('edit-users')

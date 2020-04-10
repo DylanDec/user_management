@@ -28,10 +28,10 @@
 
 <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-            <img src="{{ asset('cdn/laravel.png') }}" >
+        <a class="navbar-item" href="{{ route('home') }}">
+            <img src="{{ asset('cdn/laravel.png') }}">
         </a>
-        <a class="navbar-item mr-5" href="https://bulma.io">
+        <a class="navbar-item mr-5" href="{{ route('home') }}">
             {{ config('app.name') }}
         </a>
 
@@ -45,16 +45,16 @@
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item">
-                Home
+                nav1
             </a>
 
             <a class="navbar-item">
-                Documentation
+                nav2
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                    More
+                    nav3dropdown
                 </a>
 
                 <div class="navbar-dropdown">
@@ -94,7 +94,7 @@
                             </a>
 
                             <div class="navbar-dropdown is-right">
-                                <p class="navbar-item">Welcome, &nbsp;<b>{{ Auth::user()->highestRole() }}</b></p>
+                                <p class="navbar-item">Welcome, &nbsp;<b>{{ Auth::user()->highestRole('long') }}</b></p>
 
                                 @can('manage-users')
                                 <a class="navbar-item" href="{{ route('admin.users.index') }}">User management</a>
@@ -140,32 +140,6 @@
         </p>
         <ul class="menu-list">
             <li><a class="is-active">Dashboard</a></li>
-            <li><a>Customers</a></li>
-        </ul>
-        <p class="menu-label">
-            Administration
-        </p>
-        <ul class="menu-list">
-            <li><a>Team Settings</a></li>
-            <li>
-                <a class="">Manage Your Team</a>
-                <ul>
-                    <li><a>Members</a></li>
-                    <li><a>Plugins</a></li>
-                    <li><a>Add a member</a></li>
-                </ul>
-            </li>
-            <li><a>Invitations</a></li>
-            <li><a>Cloud Storage Environment Settings</a></li>
-            <li><a>Authentication</a></li>
-        </ul>
-        <p class="menu-label">
-            Transactions
-        </p>
-        <ul class="menu-list">
-            <li><a>Payments</a></li>
-            <li><a>Transfers</a></li>
-            <li><a>Balance</a></li>
         </ul>
     </nav>
 </aside>

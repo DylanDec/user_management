@@ -14,11 +14,11 @@ class RolesTableSeeder extends Seeder
     {
         Role::truncate();
 
-        Role::create(['name' => 'admin']);
-        Role::create(['name' => 'moderator']);
-        Role::create(['name' => 'author']);
-        Role::create(['name' => 'premium']);
-        Role::create(['name' => 'verified']);
-        Role::create(['name' => 'user']);
+        Role::create(['name' => 'admin', 'long' => 'Administrator', 'short' => 'Admin']);
+        Role::create(['name' => 'moderator', 'long' => 'Moderator', 'short' => 'Mod']);
+        Role::create(['name' => 'author', 'long' => 'Author', 'short' => 'Auth']);
+        Role::create(['name' => 'premium', 'long' => 'Premium', 'short' => 'Premium']);
+        Role::create(['name' => 'verified', 'long' => 'Verified', 'short' => 'Verified']);
+        Role::create(['name' => 'user', 'long' => 'Gebruiker', 'short' => 'Gebr']);
     }
 }
