@@ -10,7 +10,7 @@ This system includes
 
 - Roles
 - Roles middleware
-- Get highest role
+- Get highest role (original name, short title, long title)
 - User list (name, email, roles)
 - Ability to edit users
 - Ability to delete users
